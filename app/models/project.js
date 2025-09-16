@@ -5,4 +5,8 @@ const Project = sequelize.define('project', {
     name: { type: DataTypes.STRING } 
 })
 
+sequelize.sync({
+  alter: true
+})
+
 export default Project

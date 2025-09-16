@@ -6,12 +6,15 @@ const ProjectController = {
       const projects = await Project.findAll()
       res.status(200)
       res.json({
+        success: true,
         data: projects
       })
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   },
@@ -26,7 +29,9 @@ const ProjectController = {
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   },
@@ -45,7 +50,9 @@ const ProjectController = {
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   },
@@ -64,7 +71,9 @@ const ProjectController = {
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   }

@@ -1,6 +1,5 @@
 import Employee from '../models/employee.js'
 
-
 const EmployeeController = {
   async index(req, res) {
 
@@ -8,12 +7,15 @@ const EmployeeController = {
       const emps = await Employee.findAll()
       res.status(200)
       res.json({
+        success: true,
         data: emps
       })
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
 
@@ -29,7 +31,9 @@ const EmployeeController = {
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   },
@@ -41,14 +45,16 @@ const EmployeeController = {
         }
       })
       res.status(200)
-      res.json({
+      res.json({        
         success: true,
         data: emp
       })
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   },
@@ -67,7 +73,9 @@ const EmployeeController = {
     } catch (error) {
       res.status(500)
       res.json({
-        message: 'Hiba'
+        success: false,
+        message: 'Hiba!',
+        error: error
       })
     }
   }
